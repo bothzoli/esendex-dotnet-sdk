@@ -16,7 +16,6 @@
     <PackageIconUrl>http://www.esendex.co.uk/sites/all/themes/esendex14/favicon.ico</PackageIconUrl>
     <PackageTags>SDK API Esendex .NET</PackageTags>
     <PackageId>esendex-dotnet-sdk</PackageId>
-
   </PropertyGroup>
 
   <PropertyGroup Condition="$(DefineConstants.Contains('SIGNED'))">
@@ -25,7 +24,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="newtonsoft.json" Version="10.0.3" />
+    <PackageReference Include="newtonsoft.json" Version="13.0.3" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)'=='net40'">
