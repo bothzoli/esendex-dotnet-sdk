@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netcoreapp2.0;net461</TargetFrameworks>
+    <TargetFramework>net8.0</TargetFramework>
     <RootNamespace>com.esendex.sdk.test</RootNamespace>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
@@ -20,10 +20,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\source\com.esendex.sdk.csproj" />
-  </ItemGroup>
-
-  <ItemGroup Condition="'$(TargetFramework)' == 'net461'">
-    <Reference Include="System.Web" />
   </ItemGroup>
 
 </Project>
