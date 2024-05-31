@@ -11,14 +11,18 @@
     <PackageVersion>3.8.0</PackageVersion>
     <Authors>Esendex</Authors>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <PackageLicenseUrl>http://opensource.org/licenses/BSD-3-Clause</PackageLicenseUrl>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageProjectUrl>http://developers.esendex.com/SDKs/DotNet-SDK</PackageProjectUrl>
     <PackageIconUrl>http://www.esendex.co.uk/sites/all/themes/esendex14/favicon.ico</PackageIconUrl>
     <PackageTags>SDK API Esendex .NET</PackageTags>
     <PackageId>esendex-dotnet-sdk</PackageId>
   </PropertyGroup>
 
-  <PropertyGroup Condition="$(DefineConstants.Contains('SIGNED'))">
+  <PropertyGroup Condition="'$(LOCAL)' == 'true'">
+    <DefineConstants>LOCAL</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>..\.solution\KeyFile.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
@@ -35,6 +39,10 @@
   </ItemGroup>
   <ItemGroup Condition="'$(TargetFramework)'=='net461'">
     <Reference Include="System.Web" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\LICENSE" Pack="true" PackagePath=""/>
   </ItemGroup>
 
 </Project>
